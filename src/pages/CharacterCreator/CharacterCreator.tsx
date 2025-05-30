@@ -6,5 +6,5 @@ export const CharacterCreator: React.FC = () => {
             <h1>Character Creator</h1>
             <p>Welcome to the Character Creator page!</p>
         </div>
-    )
+    );
 }

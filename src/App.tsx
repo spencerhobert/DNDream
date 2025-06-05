@@ -1,9 +1,8 @@
-import React from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router';
 import CharacterCreator from './pages/CharacterCreator';
 
-const App: React.FC = () => {
+export default function App() {
   // const [count, setCount] = useState(0);
 
   return (
@@ -30,7 +29,7 @@ const App: React.FC = () => {
     //   </p>
     // </>
     
-    <main className="max-w-6xl mx-auto">
+    <main className="max-w-5xl w-5xl h-screen mx-auto">
       <Routes>
         <Route path="/" element={<CharacterCreator />} />
         <Route path="*" element={
@@ -44,5 +43,3 @@ const App: React.FC = () => {
     </main>
   );
 }
-
-export default App

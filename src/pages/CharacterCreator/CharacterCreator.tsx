@@ -1,18 +1,23 @@
-import React from 'react';
-import { RaceCard } from './components/RaceCard';
-import ReactImg from '../../assets/react.svg';
+import RaceCard from './components/RaceCard';
+import { races } from './assets/Races';
 
-export const CharacterCreator: React.FC = () => {
+export default function CharacterCreator() {
     return (
-        <div className="character-creator">
+        <div className="character-creator px-5">
             <h1>Character Creator</h1>
             <p>Welcome to the Character Creator page!</p>
 
-            <RaceCard 
-                img={ReactImg}
-                name="Test"
-                description="This is a test"
-            />
+            <div className="grid grid-cols-3 py-10 gap-10">
+                {races.map((race, idx) => (
+                    <RaceCard
+                        key={idx}
+                        img={race.img}
+                        name={race.name}
+                        description={race.desc}
+                    />
+                ))}
+            </div>
+            
         </div>
     );
 }

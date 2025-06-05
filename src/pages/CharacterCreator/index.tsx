@@ -1,3 +1,3 @@
-import { CharacterCreator } from "./CharacterCreator";
+import CharacterCreator from "./CharacterCreator";
 
 export default CharacterCreator;

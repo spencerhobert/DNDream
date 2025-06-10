@@ -3,11 +3,11 @@ import { races } from './assets/Races';
 
 export default function CharacterCreator() {
     return (
-        <div className="character-creator px-5">
+        <div className="character-creator px-5 text-center">
             <h1>Character Creator</h1>
             <p>Welcome to the Character Creator page!</p>
 
-            <div className="grid grid-cols-3 py-10 gap-10">
+            <div className="grid grid-cols-3 gap-10 py-10">
                 {races.map((race, idx) => (
                     <RaceCard
                         key={idx}
@@ -17,7 +17,6 @@ export default function CharacterCreator() {
                     />
                 ))}
             </div>
-            
         </div>
     );
 }

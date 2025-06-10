@@ -1,30 +1,30 @@
-import ReactImg from '../../../assets/react.svg'
+import ReactImg from '../../../assets/react.svg';
 
 type RaceTypes = {
     name: string;
     img: string;
     desc: string;
-}
+};
 
 export const races: RaceTypes[] = [
     {
-        name: "Human",
+        name: 'Human',
         img: ReactImg,
-        desc: "This is for Human"
+        desc: 'This is for Human',
     },
     {
-        name: "Elf",
+        name: 'Elf',
         img: ReactImg,
-        desc: "This is for Elf"
+        desc: 'This is for Elf',
     },
     {
-        name: "Dragonborn",
+        name: 'Dragonborn',
         img: ReactImg,
-        desc: "This is for Dragonborn"
+        desc: 'This is for Dragonborn',
     },
     {
-        name: "Halfling",
+        name: 'Halfling',
         img: ReactImg,
-        desc: "This is for Halfling"
-    }
-]
+        desc: 'This is for Halfling',
+    },
+];

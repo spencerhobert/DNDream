@@ -5,7 +5,9 @@ export default function Navbar() {
     return (
         <nav className="navbar mx-auto flex h-10 items-center bg-green-600 text-wrap dark:bg-green-950">
             <div>
-                <Link to="/" className="px-5">Home</Link>
+                <Link to="/" className="px-5">
+                    Home
+                </Link>
                 <Link to="/character-creator">Character Creator</Link>
             </div>
             <div className="ml-auto px-5">

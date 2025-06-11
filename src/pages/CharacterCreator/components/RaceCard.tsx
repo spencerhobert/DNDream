@@ -7,8 +7,9 @@ type RaceCardProps = {
 export default function RaceCard({ img, name, description }: RaceCardProps) {
     return (
         <div
-            className="center h-full max-h-100 max-w-70 rounded-lg border border-gray-200 bg-white
-                shadow-sm dark:border-gray-700 dark:bg-gray-800 hover:dark:shadow-amber-50"
+            className="center h-full max-h-80 max-w-60 rounded-lg border-2 border-gray-200 bg-white
+                shadow-sm hover:border-black hover:shadow-2xl hover:bg-[#fffbf0] dark:border-gray-700
+                dark:bg-gray-800 dark:hover:shadow-amber-50 dark:hover:border-gray-500 dark:hover:bg-gray-700"
         >
             <img src={img} className="w-full rounded-t-lg" alt="React Logo" />
             <div className="p-5">

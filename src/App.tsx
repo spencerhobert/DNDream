@@ -31,12 +31,15 @@ export default function App() {
         //   </p>
         // </>
 
-        <div className="dark:bg-gray-900 dark:text-white min-h-screen">
+        <div className="min-h-screen max-w-screen overflow-x-hidden dark:bg-gray-900 dark:text-white">
             <Navbar />
-            <main className="mx-auto w-5xl max-w-5xl ">
+            <main className="mx-auto max-w-5xl px-1 sm:px-4">
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/character-creator" element={<CharacterCreator />} />
+                    <Route
+                        path="/character-creator"
+                        element={<CharacterCreator />}
+                    />
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </main>

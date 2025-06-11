@@ -29,7 +29,7 @@ export default function DarkModeToggle() {
             value={{
                 color: isDarkMode ? 'white' : 'black',
                 className: 'dark-mode-toggle',
-                size: '20',
+                size: '25',
             }}
         >
             <button onClick={toggleTheme}>

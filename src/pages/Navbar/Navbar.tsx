@@ -1,4 +1,4 @@
-import DarkModeToggle from '../../helperComponents/DarkModeToggle';
+import DarkModeToggle from '../../HelperComponents/DarkModeToggle';
 
 export default function Navbar() {
     return (

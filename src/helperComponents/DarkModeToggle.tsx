@@ -20,7 +20,7 @@ export default function DarkModeToggle() {
         }
     }, [isDarkMode]);
 
-    function toggleDarkMode() {
+    function toggleTheme() {
         setDarkMode(!isDarkMode);
     }
 
@@ -32,7 +32,7 @@ export default function DarkModeToggle() {
                 size: '20',
             }}
         >
-            <button onClick={toggleDarkMode}>
+            <button onClick={toggleTheme}>
                 <MdLightMode />
             </button>
         </IconContext.Provider>

@@ -7,3 +7,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+/* This lets me control dark/light mode with a button */
+@custom-variant dark (&:where(.dark, .dark *));

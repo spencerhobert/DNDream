@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router';
+import Home from './pages/Home';
 import CharacterCreator from './pages/CharacterCreator';
 import PageNotFound from './pages/PageNotFound';
 import Navbar from './pages/Navbar';
@@ -30,11 +31,12 @@ export default function App() {
         //   </p>
         // </>
 
-        <div className="dark:bg-gray-900 dark:text-white">
+        <div className="dark:bg-gray-900 dark:text-white min-h-screen">
             <Navbar />
-            <main className="mx-auto h-screen w-5xl max-w-5xl">
+            <main className="mx-auto w-5xl max-w-5xl ">
                 <Routes>
-                    <Route path="/" element={<CharacterCreator />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/character-creator" element={<CharacterCreator />} />
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </main>

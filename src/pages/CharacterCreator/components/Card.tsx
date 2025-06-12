@@ -1,10 +1,10 @@
-type RaceCardProps = {
+type CardProps = {
     img: string;
     name: string;
     description: string;
 };
 
-export default function RaceCard({ img, name, description }: RaceCardProps) {
+export default function Card({ img, name, description }: CardProps) {
     return (
         <div
             className="center h-full max-h-80 max-w-60 rounded-lg border-2 border-gray-200 bg-white

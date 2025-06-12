@@ -1,5 +1,4 @@
-import RaceCard from './components/RaceCard';
-import { races } from './assets/Races';
+import { Outlet } from 'react-router';
 import PageArrow from './components/PageArrow';
 
 export default function CharacterCreator() {
@@ -10,23 +9,16 @@ export default function CharacterCreator() {
 
             <div className="flex flex-row pt-5">
                 <div className="relative basis-1/6 items-start sm:basis-1/12 sm:items-center">
-                    <div className="fixed top-5/12 left-2 sm:left-auto">
+                    <div className="sticky top-1/2 left-0 -translate-y-1/2">
                         <PageArrow direction="left" />
                     </div>
                 </div>
-                <div className="grid basis-4/6 grid-cols-1 gap-5 pb-2 sm:basis-10/12 sm:grid-cols-3 sm:gap-10">
-                    {races.map((race, idx) => (
-                        <RaceCard
-                            key={idx}
-                            img={race.img}
-                            name={race.name}
-                            description={race.desc}
-                        />
-                    ))}
+                <div className="grow">
+                    <Outlet />
                 </div>
                 <div className="relative basis-1/6 sm:basis-1/12 sm:items-center">
-                    <div className="fixed top-5/12 right-2 sm:right-auto">
-                        <PageArrow direction="right" />
+                    <div className="sticky top-1/2 right-0 -translate-y-1/2">
+                        <PageArrow direction="right" disabled={true} />
                     </div>
                 </div>
             </div>

@@ -1,12 +1,29 @@
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6';
 import { IconContext } from 'react-icons';
+import { useNavigate } from 'react-router';
 
 type ArrowType = {
     direction: 'left' | 'right';
     disabled?: boolean;
+    navigateTo?: string;
 };
 
-export default function PageArrow({ direction, disabled }: ArrowType) {
+export default function PageArrow({
+    direction,
+    disabled,
+    navigateTo = '#',
+}: ArrowType) {
+    const navigate = useNavigate();
+
+    // If the button is active, but navigateTo doesn't have anything inside of it, make the button disabled
+    //   This makes it so '#' cannot be a navigation, which should be fine.
+    if (
+        (disabled === false || typeof disabled === 'undefined') &&
+        navigateTo === '#'
+    ) {
+        disabled = true;
+    }
+
     return (
         <IconContext.Provider
             value={{
@@ -19,6 +36,9 @@ export default function PageArrow({ direction, disabled }: ArrowType) {
                     disabled:opacity-50 disabled:hover:rounded-xl dark:border-green-950
                     dark:bg-green-700 dark:hover:bg-green-800"
                 disabled={disabled}
+                onClick={() => {
+                    navigate(navigateTo);
+                }}
             >
                 {direction === 'left' ? <FaAngleLeft /> : <FaAngleRight />}
             </button>

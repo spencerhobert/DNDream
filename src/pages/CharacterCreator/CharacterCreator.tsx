@@ -1,11 +1,32 @@
-import { Outlet } from 'react-router';
+import { Outlet, useLocation, useNavigate } from 'react-router';
 import PageArrow from './components/PageArrow';
-import {
-    RACE_SELECTOR_ROUTE,
-    CLASS_SELECTOR_ROUTE,
-} from './assets/RouteConstants';
+import { CHARACTER_CREATOR_PAGES } from './assets/Constants';
 
 export default function CharacterCreator() {
+    const location = useLocation();
+    console.log(`Path name: ${location.pathname}`);
+    const navigate = useNavigate();
+
+    // Find current page index
+    const currentPage = CHARACTER_CREATOR_PAGES.find(
+        (page) => location.pathname === page.absoluteRoute
+    );
+    console.log(`Current page: ${currentPage}`);
+    const isLeftPageTurnDisabled: boolean =
+        typeof currentPage?.prevPageRoute === 'undefined';
+    const isRightPageTurnDisabled: boolean =
+        typeof currentPage?.nextPageRoute === 'undefined';
+
+    const switchPages = (direction: 'left' | 'right') => {
+        if (currentPage?.prevPageRoute && direction === 'left') {
+            // Back
+            navigate(currentPage.prevPageRoute);
+        } else if (currentPage?.nextPageRoute) {
+            // Foreward
+            navigate(currentPage.nextPageRoute);
+        }
+    };
+
     return (
         <div className="character-creator text-center">
             <h1>Character Creator</h1>
@@ -16,7 +37,8 @@ export default function CharacterCreator() {
                     <div className="sticky top-1/2 left-0 -translate-y-1/2">
                         <PageArrow
                             direction="left"
-                            navigateTo={RACE_SELECTOR_ROUTE}
+                            disabled={isLeftPageTurnDisabled}
+                            onClick={switchPages}
                         />
                     </div>
                 </div>
@@ -27,7 +49,8 @@ export default function CharacterCreator() {
                     <div className="sticky top-1/2 right-0 -translate-y-1/2">
                         <PageArrow
                             direction="right"
-                            navigateTo={CLASS_SELECTOR_ROUTE}
+                            disabled={isRightPageTurnDisabled}
+                            onClick={switchPages}
                         />
                     </div>
                 </div>
